@@ -1,0 +1,200 @@
+<div id="pagebody">
+
+    <div id="loader"></div>
+    <!-- Header Area Starts -->
+    <div id="wrap">
+        <div class="navbar-wrapper inner-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">
+                        <div class="logo">
+                            <div class="logo_img"></div>
+                        </div>
+                    </div>
+
+                    <div class="claerfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Header Area Ends -->
+    <!-- Header Starts -->
+    <header class="header">
+        <div class="wrap">
+            <span class="res-menu-icon">&#9776;</span>
+            <div class="logo">
+                <a href="index.html" target="_blank"><img src="assets/logo.png" alt="logo" /></a>
+            </div>
+            <div class="welcome">
+                <p class="welmsg">Loyalty Terminal Service</p>
+            </div>
+            <div class="account" id="act_login">
+                <span id="user-menu"><img src="assets/logo_fav.png" width="36" style="margin-bottom: 4px;margin-left: 1px;border-radius:30px;"  (click)="LogOut()"/> Rasool &nbsp;&nbsp; <span class="glyphicon glyphicon-menu-down table_user" aria-hidden="true" style="margin-right:2px;"></span></span>
+                <ul id="user-menu-list">
+                    <li><a  style="color:#333;">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Header ends -->
+    <!-- Body Starts -->
+    <div class="body">
+    </div>
+
+    <div class="float-left-area">
+        <div class="inner-left">
+            <div class="contain subss">
+                <div class="left">
+                    <ul class="side-menu">
+                        <li class="sidebar">
+                            <span class="res-menu-icon hover-icon">&#9776;</span>
+                            <div class="logo">
+                                <img src="assets/logo.png" alt="logo" />
+                            </div>
+                        </li>
+                        <li id="TerID">
+                            <a href="javascript:void(0);"><img src="assets/ticket.png" /> Terminal <span class="glyphicon glyphicon-menu-down arr" aria-hidden="true"></span></a>
+                        </li>
+                        <ul Class="sub-side-menu" id="sidetriangle">
+                            <li id="RegisterID">
+                                <a href="Registerform.html"> Registration</a>
+                            </li>
+                        </ul>                       
+                        <li id="ReportID">
+                            <a (click)="LogOut()"><img src="assets/report.png" /> Logout<span class="glyphicon glyphicon-menu-down arr" aria-hidden="true"></span></a>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<div class="float-right-area">
+    <div class="inner-right">
+        <div class="main subs pos_entry" style="padding-bottom:40px;">
+            <fieldset  class="returntkt">
+                <form form="form1" #form="ngForm" autocomplete="off" >
+                    <legend style="padding: 0px 5px 2px 5px;font-weight: 700;color: #333;">SABB Loyalty Terminal</legend>        
+                        <div class="row marg-bottom-10">
+                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-8 formcol">
+                                <label>Terminal ID</label>
+                                <input type="hidden" class="form-control" id="terminalFk" name="terminalFk" [(ngModel)]="terminal.terminalFk" #terminalFk="ngModel" >
+                                <input type="hidden" class="form-control" id="merchantPk" name="merchantPk" [(ngModel)]="terminal.merchantPk" #merchantPk="ngModel" >
+                                <input type="hidden" class="form-control" id="cityFk" name="cityFk" [(ngModel)]="terminal.cityFk" #cityFk="ngModel" >
+                                <input type="number" class="form-control" id="terminalId" name="terminalId" [(ngModel)]="terminal.terminalId" #terminalId="ngModel" required>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 formcol">
+                                <label>&nbsp;</label>
+                                <button type="button" class="btn btn-default" style="height: 30px;padding: 0px 9px;color: #fff;
+                                background-color: #333;" (click)="OnSearch(form)">
+                                    Search <span class="glyphicon glyphicon-search"></span> 
+                                </button>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 formcol">
+                                <label>Merchant Name [En]</label>
+                                <input type="text" class="form-control" id="merchantNameEn" name="merchantNameEn" [(ngModel)]="terminal.merchantNameEn" #merchantNameEn="ngModel" required>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 formcol">
+                                <label>Merchant Name [Ar]</label>                           
+                                <input type="text" class="form-control" id="merchantNameAr" name="merchantNameAr" [(ngModel)]="terminal.merchantNameAr" #merchantNameAr="ngModel" required>
+                            </div>					                      
+                        </div>
+                        
+                        <div class="row marg-bottom-10">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 formcol">
+                                <label>Merchant Addrs 1 [En]</label>
+                                <input type="text" class="form-control" id="merchantAddressEn" name="merchantAddressEn" [(ngModel)]="terminal.merchantAddressEn" #merchantAddressEn="ngModel" required>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 formcol">
+                                <label>Merchant Addrs 1 [Ar]</label>                           
+                                <input type="text" class="form-control"  id="merchantAddressAr" name="merchantAddressAr" [(ngModel)]="terminal.merchantAddressAr" #merchantAddressAr="ngModel" required>
+                            </div>                
+                        </div>
+        
+                        <div class="row marg-bottom-10">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 formcol">
+                                <label>City</label>
+                                <select name="city" id="city" class="form-control" [(ngModel)]="terminal.cityFk" (change)="OnChangeCity($event.target.value)">
+                                    <option value="0"></option>
+                                    <option *ngFor="let city of cities" value={{city.cityPk}}>{{city.cityId}}</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col-lg-1 col-md-3 col-sm-2 col-xs-12 formcol">
+                                <label>City ID</label>
+                                <input type="text" class="form-control" id="cityId" name="cityId" [(ngModel)]="terminal.cityId" #cityId="ngModel" readonly>
+                            </div>
+                            <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 formcol">
+                                <label>City Name [En]</label>
+                                <input type="text" class="form-control" id="cityNameEn" name="cityNameEn" [(ngModel)]="terminal.cityNameEn" #cityNameEn="ngModel" readonly>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 formcol">
+                                <label>City Name [Ar]</label>
+                                <input type="text" class="form-control" id="cityNameAr" name="cityNameAr" [(ngModel)]="terminal.cityNameAr" #cityNameAr="ngModel" readonly>
+                            </div>
+                        </div>
+        
+                        <div class="row marg-bottom-10">
+                            <div class="col-lg-1 col-md-1 col-xs-12 formcol"></div>										
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 formcol">
+                                <button type="button" class="bttn" id="btnAdd" style="width: 100%;" (click)="AddTerminal(form)"  > Add </button>                            
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 formcol">
+                                <button type="button" class="bttn" id="btnSave" style="width: 100%;" (click)="SaveTerminalMerchant(form)" > Save </button>                            
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 formcol">
+                                <button type="button" class="bttn" id="btnCancel" style="width: 100%;" (click)="ResetForm()" > Cancel </button>                            
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 formcol">
+                                <button type="button" class="bttn" id="btnDelete" style="width: 100%;" (click)="DeleteTerminalMerchant(form)" > Delete </button>                            
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 formcol">
+                                <button type="button" class="bttn" id="btnEdit" style="width: 100%;" (click)="SaveTerminalMerchant(form)" > Edit </button>                            
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-xs-12 formcol"></div>	
+                        </div>
+                    </form>   
+            </fieldset>
+                                    
+        </div>
+    </div>
+</div>
+<div class="clear-floated"></div>
+
+<div id="footer">
+    <div class="footwrap">
+        <div class="footwrap-in">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 foot-comp">
+                    <div class="foot-logo">
+                        <div><img src="assets/logowhite.png" alt="logo" /></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 col-sm-3 col-xs-12 foot-nav">
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 foot-soc">
+                    <div class="foot-social">
+                        <ul>
+                            <li><a href="javascript:void(0);"><img src="assets/fb.png" /></a></li>
+                            <li><a href="javascript:void(0);"><img src="assets/twitter.png" /></a></li>
+                            <li><a href="javascript:void(0);"><img src="assets/twing.png" /></a></li>
+                            <li><a href="javascript:void(0);"><img src="assets/send.png" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="foot-last col-md-4 col-sm-5 col-xs-12">
+                    <p> &copy; 2018 Geidea. All rights reserved</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+

@@ -1,0 +1,70 @@
+<div id="wrap">
+    <div class="navbar-wrapper inner-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <div class="logo">
+                        <div class="logo_img"></div>
+                    </div>
+                </div>
+
+                <div class="claerfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div Class="login-sec1">
+    <div Class="container">
+        <div Class="row">
+            <div Class="col-xs-12 col-sm-6 col-md-5">
+                <div Class="main_login_form">
+                    <div Class="clearfix"></div>
+                    <div id="login-form">
+                        <h1>Log in</h1>
+                        <h2 style="font-size:21px;"> LOYALTY TERMINAL SERVICE</h2>
+                        <h2>
+                            <div id="messenger"></div>
+                        </h2>
+                        <div Class="login-block">
+                            <form class="login-form"  #form="ngForm" (submit)="OnLogin(form)" autocomplete="off">
+                                <div class="form-group">
+                                    <label for="email">Username</label>
+                                    <input type="text" class="form-control" name="UserName" [(ngModel)]="user.UserName" #UserName="ngModel" required autocomplete="off"
+                                        id="username" required="">
+                                    <label for="full name">Password </label>
+                                    <input type="password" class="form-control" name="Password" [(ngModel)]="user.Password" #Password="ngModel" required autocomplete="off"
+                                        id="password" required="">
+                                </div>
+                                <button type="submit" class="btn main-btn" id="login_submit_but">Log In</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div Class="clearfix"></div>
+<!-- Section1 Ends -->
+<!-- Footer Starts -->
+<div class="footer" style="position: sticky;bottom: 0px;width: 100%;height: auto;top: 100%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3 desktop_copy">
+                <div class="footlogo"><img src="assets/logowhite.png" width="94" height="30" alt="logo"></div>
+                <p>&copy; 2018 Geidea . All rights reserved </p>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 social-media">
+                <img alt="facebook" src="assets/fb.png" width="34" height="34">
+                <img alt="twitter" src="assets/twitter.png" width="34" height="34">
+                <img alt="twing" src="assets/twing.png" width="34" height="34">
+                <img alt="send" src="assets/send.png" width="40" height="40">
+            </div>
+            <div class="claerfix"></div>
+        </div>
+    </div>
+</div>

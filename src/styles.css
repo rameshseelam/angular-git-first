@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    /* overflow-y: hidden;  */
+    position: relative;
+}
+body::after {
+    content: '';
+    display: block;
+    height: auto;
+}
+footer {
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    top: 100%;
+}
+#usercode_style {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+@media (max-width: 767px) {
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .logo {
+        margin-left: 0;
+    }
+    .login-sec1 input {
+        margin-left: 0;
+    }
+    .form-group label {
+        padding-left: 0px;
+        font-size: 20px !important;
+    }
+}
+
+
+/* -----------------------------*/
+html {
+    min-height: 100%;
+    position: relative;
+    }
+    html body {
+    margin-bottom: 100px;
+    }
+    html #footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    height: auto;
+    background-color: #222;
+    }
+    html #footer .footer-block {
+    margin: 20px 0;
+    }
+
+
